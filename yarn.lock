@@ -10566,6 +10566,11 @@ unbox-primitive@^1.0.1:
     has-symbols "^1.0.2"
     which-boxed-primitive "^1.0.2"
 
+uni-crazy-router@^0.0.31:
+  version "0.0.31"
+  resolved "https://registry.npmjs.org/uni-crazy-router/-/uni-crazy-router-0.0.31.tgz#14c2aa52fdef275b32504c8ba5257bf4585182e3"
+  integrity sha512-l+KTa/mJo/R/+u2zhvJuajL3xpzvwesohNm89Xqs+73l7NQGtsXhjNQ8zokYwGeXsmQaa2nRbwXD+zvgCZZ7dQ==
+
 uni-read-pages@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npmjs.org/uni-read-pages/-/uni-read-pages-1.0.5.tgz#452c8dcaa8977bbaef600909be926c8d9704387c"
