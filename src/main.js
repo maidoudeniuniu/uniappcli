@@ -5,7 +5,7 @@ import store from './store'
 import Vue from 'vue'
 Vue.config.productionTip = false
 Vue.prototype.$store = store
-Vue.prototype.$adpid = "1111111111"
+Vue.prototype.$adpid = "11111111112222"
 Vue.prototype.$backgroundAudioData = {
 	playing: false,
 	playTime: 0,
