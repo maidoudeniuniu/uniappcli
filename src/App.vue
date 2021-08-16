@@ -2,16 +2,9 @@
 	import { mapMutations } from 'vuex'
     export default {
         onLaunch: function() {
-            // #ifdef APP-PLUS
-            // App平台检测升级，服务端代码是通过uniCloud的云函数实现的，详情可参考：https://ext.dcloud.net.cn/plugin?id=2226
-			if(plus.runtime.appid !== 'HBuilder'){ // 真机运行不需要检查更新，真机运行时appid固定为'HBuilder'，这是调试基座的appid
 				uni.request({
-				    url: 'https://7a3e3fa9-7820-41d0-be80-11927ac2026c.bspapp.com/http/update', //检查更新的服务器地址
-				    data: {
-				        appid: plus.runtime.appid,
-				        version: plus.runtime.version,
-				        imei: plus.device.imei
-				    },
+				    url: 'http://192.168.0.106:8080/credit', //检查更新的服务器地址
+				    data: {},
 				    success: (res) => {
 				        if (res.statusCode == 200 && res.data.isUpdate) {
 				            // 提醒用户更新
@@ -27,24 +20,31 @@
 				        }
 				    }
 				})
-			}
+			
+			
+			
+   //          // #ifdef APP-PLUS
+   //          // App平台检测升级，服务端代码是通过uniCloud的云函数实现的，详情可参考：https://ext.dcloud.net.cn/plugin?id=2226
+			// if(plus.runtime.appid !== 'HBuilder'){ // 真机运行不需要检查更新，真机运行时appid固定为'HBuilder'，这是调试基座的appid
+				
+			// }
 
-			// 一键登录预登陆，可以显著提高登录速度
-			uni.preLogin({
-				provider: 'univerify',
-				success: (res) => {
-					// 成功
-					this.setUniverifyErrorMsg();
-					console.log("preLogin success: ", res);
-				},
-				fail: (res) => {
-					this.setUniverifyLogin(false);
-					this.setUniverifyErrorMsg(res.errMsg);
-					// 失败
-					console.log("preLogin fail res: ", res);
-				}
-			})
-            // #endif
+			// // 一键登录预登陆，可以显著提高登录速度
+			// uni.preLogin({
+			// 	provider: 'univerify',
+			// 	success: (res) => {
+			// 		// 成功
+			// 		this.setUniverifyErrorMsg();
+			// 		console.log("preLogin success: ", res);
+			// 	},
+			// 	fail: (res) => {
+			// 		this.setUniverifyLogin(false);
+			// 		this.setUniverifyErrorMsg(res.errMsg);
+			// 		// 失败
+			// 		console.log("preLogin fail res: ", res);
+			// 	}
+			// })
+   //          // #endif
         },
         onShow: function() {
             console.log('App Show')
